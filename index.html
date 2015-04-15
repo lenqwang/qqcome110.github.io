@@ -112,6 +112,112 @@
           
           
             
+              <a class="post-title-link" href="/2015/04/15/HTML5的知识/">
+                HTML5的知识
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-04-15
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/HTML5知识/">HTML5知识</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/04/15/HTML5的知识/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/15/HTML5的知识/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="关于存储">关于存储</h3><h4 id="cookie">cookie</h4><h4 id="LocalStorage_、SessionStorage">LocalStorage 、SessionStorage</h4><blockquote>
+<p>使用方法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">'key'</span>, <span class="string">'value'</span>);</span><br><span class="line">localStorage.getItem(<span class="string">'key'</span>);</span><br><span class="line">localStorage.key(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">sessionStorage.setItem(<span class="string">'key'</span>, <span class="string">'value'</span>);</span><br><span class="line">sessionStorage.getItem(<span class="string">'key'</span>);</span><br><span class="line">sessionStorage.key(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>存储信息</p>
+</blockquote>
+<p>可以用来存储数组、json、图片、脚本、样式文件</p>
+<p>图片可以这样来存储：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> src = <span class="string">'xxx.jpg'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">set</span><span class="params">(key)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line"></span><br><span class="line">  img.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> canvasImg = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>),</span><br><span class="line">        imgContext = canvasImg.getContext(<span class="string">'2d'</span>),</span><br><span class="line">        _width = <span class="keyword">this</span>.width,</span><br><span class="line">        _height = <span class="keyword">this</span>.height;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 确保canvas元素的大小和图片一致</span></span><br><span class="line">    canvasImg.width = _width;</span><br><span class="line">    canvasImg.height = _height;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 渲染图片到canvas</span></span><br><span class="line">    canvasImg.drawImage(<span class="keyword">this</span>, <span class="number">0</span>, <span class="number">0</span>, _width, _height);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// to DataUrl</span></span><br><span class="line">    <span class="keyword">var</span> imgAsDataURL = canvasImg.toDataURL(<span class="string">'image/png'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 本地存储图片</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      localStorage.setItem(key, imgAsDataURL);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Storage failed: '</span> + e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">  img.src = src;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span><span class="params">(key)</span> </span>&#123; <span class="comment">// 从本地存储中获取图片并渲染</span></span><br><span class="line">  <span class="keyword">var</span> imgSrc = localStorage.getItem(key),</span><br><span class="line">      imgObj = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line"></span><br><span class="line">  imgObj.src = imgSrc;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(imgObj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用本地存储的时候需要注意的地方">使用本地存储的时候需要注意的地方</h4><ul>
+<li>使用前要判断浏览器是否<code>支持</code></li>
+<li>写数据的时候，需要<code>异常处理</code>，避免超出容量抛出错误</li>
+<li>避免把<code>敏感</code>的信息存入localStorage</li>
+<li>key的<code>唯一性</code></li>
+</ul>
+<h4 id="使用限制">使用限制</h4><ul>
+<li>存储更新策略，过期控制</li>
+<li>子域名之间不能共享存储数据</li>
+<li>超出存储大小之后如何存储(LRU, FIFO)</li>
+<li>server端如何取到</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、通过设计你的代码逻辑控制过期时间，<span class="built_in">local</span>Storage没有时间的限制</span><br><span class="line"><span class="number">2</span>、cookie可以通过document.domain = <span class="string">'xxx'</span>来共享子域名的存储数据,而<span class="built_in">local</span>Storage没有</span><br><span class="line"><span class="number">3</span>、通过代码策略控制存储大小的限制，或者使用算法LRU,FIFO去控制大小</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myLS = &#123;</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span><span class="params">(key, val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> curTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    localStorage.setItem(key, <span class="built_in">JSON</span>.stringify(&#123;data: val, time: curTime&#125;));</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">/*</span><br><span class="line">    exp: &#123;number&#125;过期时间  1000: 1秒</span><br><span class="line">  */</span></span><br><span class="line">  get: <span class="function"><span class="keyword">function</span><span class="params">(key, exp)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = localStorage.getItem(key),</span><br><span class="line">        dataObj = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() - dataObj &gt; exp) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'expires'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'data='</span> + dataObj.data);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/"> #html5 </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/04/15/node相关/">
                 node相关知识
               </a>
@@ -412,6 +518,8 @@
 <p>无意中在<a href="http://www.html-js.com/" target="_blank" rel="external">前端乱炖</a>里面找到了这个node插件，主要是想通过md记录平时自己在开发过程中遇到的问题及心得</p>
 </blockquote>
 <p>虽然第一次使用hexo，但还是有很多地方不是很懂的地方，比如如何在其他地方获取最新的github上的代码在hexo部署后能同步github上的博客。以后会记录很多相关的知识在这里面。</p>
+<p>在使用<code>hexo deploy</code>的时候，必须得生成静态网页才能部署到网站</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo -<span class="keyword">g</span> || hexo <span class="keyword">generate</span></span><br><span class="line"></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
         
       
@@ -549,21 +657,21 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
