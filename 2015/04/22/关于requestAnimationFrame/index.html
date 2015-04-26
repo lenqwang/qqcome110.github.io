@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="js,兼容," />
+  <meta name="keywords" content="异步编程," />
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-  <title> 前端兼容总结 // 沙漠小店的博客 </title>
+  <title> 关于requestAnimationFrame // 沙漠小店的博客 </title>
 </head>
 
 <body>
@@ -110,7 +110,7 @@
           
           
             
-              前端兼容总结
+              关于requestAnimationFrame
             
           
         </h1>
@@ -118,14 +118,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-04-19
+          发表于 2015-04-22
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/前端兼容性问题/">前端兼容性问题</a>
+              <a href="/categories/js/">js</a>
 
               
               
@@ -138,8 +138,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/04/20/前端兼容总结/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/20/前端兼容总结/"></span>
+            <a href="/2015/04/22/关于requestAnimationFrame/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/22/关于requestAnimationFrame/"></span>
             </a>
           </span>
           
@@ -153,10 +153,19 @@
       
 
       
-        <h3 id="js的兼容">js的兼容</h3><ul>
-<li>我们利用原生js来获取的属性方法中有个漏洞：(我们加入页面中有个这样的元素<code>&lt;img src=&quot;../img/111.jpg&quot; alt=&quot;&quot; id=&quot;img&quot; /&gt;</code>;)</li>
-</ul>
-<p>我们获取这个对象的src值的时候，img.src —&gt; <code>http://localhost/img/111.jpg</code>获取的是绝对路径<br>但是我们要获取它的真实路径应该是这样的：<code>img.getAttribute(&#39;src&#39;)</code> —&gt; <code>../img/111.jpg</code><br><a id="more"></a></p>
+        <h4 id="js异步编程">js异步编程</h4><p>我们都知道js是一个单线程运行的程序（也即阻塞），但是它也是非阻塞式的，例如：IO/定时器函数，可以实现非阻塞</p>
+<p>我们来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(i);</span><br><span class="line">	&#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这个会输出什么呢？</span></span><br></pre></td></tr></table></figure>
+<p>上面的结果是3、3、3，为什么呢？</p>
+<blockquote>
+<p>   i在遇到setTimeout函数的时候，首先<code>挂起</code>，<code>0ms</code>后执行内函数，此时<code>i</code>已经等于3了</p>
+</blockquote>
+<p>绑定事件也一样，一旦给某个DOM绑定了事件，此前的js执行流比较都已经完成了，才会挂起此时的事件绑定</p>
+<p>我们来看一个例子说明下定时器的执行时间:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fireCount = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">Date</span> - start &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">    <span class="built_in">console</span>.log(fireCount);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  fireCount++;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 此时得出的结果： 205左右不等</span></span><br></pre></td></tr></table></figure></p>
+<p>为什么呢？</p>
+<p>我们来了解下<code>requestAnimationFrame</code>，看看这是什么东东，见<a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/" target="_blank" rel="external">requestAnimationFrame</a></p>
+<p>这里列出可以兼容IE的requestAnimationFrame代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://paulirish.com/2011/requestanimationframe-for-smart-animating/</span></span><br><span class="line"><span class="comment">// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating</span></span><br><span class="line"><span class="comment">// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel</span></span><br><span class="line"><span class="comment">// MIT license</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lastTime = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> vendors = [<span class="string">'ms'</span>, <span class="string">'moz'</span>, <span class="string">'webkit'</span>, <span class="string">'o'</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x) &#123;</span><br><span class="line">        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];</span><br><span class="line">        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span><span class="params">(callback, element)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">        <span class="keyword">var</span> timeToCall = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">16</span> - (currTime - lastTime));</span><br><span class="line">        <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            callback(currTime + timeToCall);</span><br><span class="line">        &#125;, timeToCall);</span><br><span class="line">        lastTime = currTime + timeToCall;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.cancelAnimationFrame) <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span><span class="params">(id)</span> </span>&#123;</span><br><span class="line">        clearTimeout(id);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -165,7 +174,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js-兼容/"> #js,兼容 </a>
+            <a href="/tags/异步编程/"> #异步编程 </a>
           
         </div>
       
@@ -174,13 +183,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/22/关于requestAnimationFrame/">关于requestAnimationFrame</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/04/19/如何获取url参数/">如何获取url参数</a>
+              <a href="/2015/04/20/前端兼容总结/">前端兼容总结</a>
             
           </div>
         </div>
@@ -196,8 +203,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/04/20/前端兼容总结/"
-               data-title="前端兼容总结" data-url="http://qqcome110.github.io/2015/04/20/前端兼容总结/">
+          <div class="ds-thread" data-thread-key="2015/04/22/关于requestAnimationFrame/"
+               data-title="关于requestAnimationFrame" data-url="http://qqcome110.github.io/2015/04/22/关于requestAnimationFrame/">
           </div>
         
       </div>
@@ -297,7 +304,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js的兼容"><span class="nav-number">1.</span> <span class="nav-text">js的兼容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#js异步编程"><span class="nav-number">1.</span> <span class="nav-text">js异步编程</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
