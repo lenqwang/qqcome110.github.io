@@ -112,6 +112,99 @@
           
           
             
+              <a class="post-title-link" href="/2015/04/26/js各种排序算法/">
+                js各种排序算法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-04-26
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/js排序算法/">js排序算法</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/04/26/js各种排序算法/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/26/js各种排序算法/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="排序算法分为内部排序和外部排序，内部排序需要使用内存，下面开始探讨内部排序">排序算法分为内部排序和外部排序，内部排序需要使用内存，下面开始探讨内部排序</h3><ul>
+<li>插入排序：直接插入排序和希尔排序</li>
+<li>选择排序：简单选择排序和堆排序</li>
+<li>交换排序：冒泡排序和快速排序</li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/04/26/js各种排序算法/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/"> #js </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/04/22/关于requestAnimationFrame/">
                 关于requestAnimationFrame
               </a>
@@ -162,16 +255,11 @@
 <p>我们来看一个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(i);</span><br><span class="line">	&#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这个会输出什么呢？</span></span><br></pre></td></tr></table></figure>
 <p>上面的结果是3、3、3，为什么呢？</p>
-<blockquote>
-<p>   i在遇到setTimeout函数的时候，首先<code>挂起</code>，<code>0ms</code>后执行内函数，此时<code>i</code>已经等于3了</p>
-</blockquote>
-<p>绑定事件也一样，一旦给某个DOM绑定了事件，此前的js执行流比较都已经完成了，才会挂起此时的事件绑定</p>
-<p>我们来看一个例子说明下定时器的执行时间:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fireCount = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">Date</span> - start &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">    <span class="built_in">console</span>.log(fireCount);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  fireCount++;</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 此时得出的结果： 205左右不等</span></span><br></pre></td></tr></table></figure></p>
-<p>为什么呢？</p>
-<p>我们来了解下<code>requestAnimationFrame</code>，看看这是什么东东，见<a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/" target="_blank" rel="external">requestAnimationFrame</a></p>
-<p>这里列出可以兼容IE的requestAnimationFrame代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://paulirish.com/2011/requestanimationframe-for-smart-animating/</span></span><br><span class="line"><span class="comment">// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating</span></span><br><span class="line"><span class="comment">// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel</span></span><br><span class="line"><span class="comment">// MIT license</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lastTime = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> vendors = [<span class="string">'ms'</span>, <span class="string">'moz'</span>, <span class="string">'webkit'</span>, <span class="string">'o'</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x) &#123;</span><br><span class="line">        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];</span><br><span class="line">        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span><span class="params">(callback, element)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">        <span class="keyword">var</span> timeToCall = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">16</span> - (currTime - lastTime));</span><br><span class="line">        <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            callback(currTime + timeToCall);</span><br><span class="line">        &#125;, timeToCall);</span><br><span class="line">        lastTime = currTime + timeToCall;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.cancelAnimationFrame) <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span><span class="params">(id)</span> </span>&#123;</span><br><span class="line">        clearTimeout(id);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/04/22/关于requestAnimationFrame/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -882,96 +970,13 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/04/14/javascript基础知识/">
-                javascript基础知识
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-04-14
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/javascript基础/">javascript基础</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/04/14/javascript基础知识/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/14/javascript基础知识/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="javascript基础知识">javascript基础知识</h3><h4 id="变量">变量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;	<span class="comment">//应该浏览器解释引擎会解释成下面这样</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 下面这种情况</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a <span class="comment">//undefined</span></span><br><span class="line"><span class="comment">//因为只是申明了一个变量，未赋值，则变量的值就是undefined</span></span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/14/javascript基础知识/#more">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/"> #javascript </a>
-          
-        </div>
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
+  <div class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+  </div>
+
 
         </div>
       </div>
@@ -1000,21 +1005,21 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
