@@ -1,0 +1,886 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+    <meta name="description" content="web前端博客,web前端,前端,沙漠小店" />
+
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+
+
+
+
+  <title> js测试题 // 沙漠小店的博客 </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">沙漠小店的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+     
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分类
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              js测试题
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-04-26
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/javascript/">javascript</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/04/27/js测试题/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/27/js测试题/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <h4 id="js测试题">js测试题</h4><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>].map(<span class="built_in">parseInt</span>)</span><br><span class="line"><span class="comment">// 结果: [1, NaN, NaN]</span></span><br><span class="line"></span><br><span class="line">[<span class="keyword">typeof</span> <span class="literal">null</span>, <span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>]</span><br><span class="line"><span class="comment">// 结果: ["object", false]</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>].reduce(<span class="built_in">Math</span>.pow),[].reduce(<span class="built_in">Math</span>.pow)]</span><br><span class="line"><span class="comment">// 结果: 报错（ Reduce of empty array with no initial value）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> val = <span class="string">'value'</span>;</span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'Value id '</span>+(val === <span class="string">'value'</span>)?<span class="string">'Something'</span>:<span class="string">'Nothing'</span>);</span><br><span class="line"><span class="comment">// 结果：Something</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">　　<span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">　　　　<span class="keyword">var</span> name = <span class="string">"Jack"</span>;</span><br><span class="line">　　　　<span class="built_in">console</span>.info(<span class="string">'Goodbye '</span>+ name);</span><br><span class="line">　　&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">　　　　<span class="built_in">console</span>.info(<span class="string">'Hello '</span> + name);</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 结果：Goodbye Jack</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">arr[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">arr.filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>&#123;<span class="keyword">return</span> x === <span class="literal">undefined</span>&#125;);</span><br><span class="line"><span class="comment">// 结果：[]</span></span><br><span class="line"><span class="comment">// 解析：arr = [0, 1, 2, undefined × 7, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> two = <span class="number">0.2</span>;</span><br><span class="line"><span class="keyword">var</span> one = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">var</span> eight = <span class="number">0.8</span>;</span><br><span class="line"><span class="keyword">var</span> six = <span class="number">0.6</span>;</span><br><span class="line">[two -one == one,eight- six == two];</span><br><span class="line"><span class="comment">// 结果：[true, false]</span></span><br><span class="line"><span class="comment">// 解析：0.2 - 0.1 = 0.1; 0.8 - 0.6 = 0.20000000000000007</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span><span class="params">(value)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">switch</span>(value)&#123;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Case A'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Case B'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="literal">undefined</span> :</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'undefined'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">default</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Do not know!'</span>);</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'A'</span>));</span><br><span class="line"><span class="comment">// 结果：Do not know!</span></span><br><span class="line"><span class="comment">// 解析：new String('A') == [object Object] -&gt; String &#123;0: "A", length: 1, [[PrimitiveValue]]: "A"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span><span class="params">(value)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">switch</span>(value)&#123;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Case A'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Case B'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">case</span> <span class="literal">undefined</span> :</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'undefined'</span>);</span><br><span class="line">　　　　　　<span class="keyword">break</span>;</span><br><span class="line">　　　　<span class="keyword">default</span>:</span><br><span class="line">　　　　　　<span class="built_in">console</span>.info(<span class="string">'Do not know!'</span>);</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="built_in">String</span>(<span class="string">'A'</span>));</span><br><span class="line"><span class="comment">// 结果：Case A</span></span><br><span class="line"><span class="comment">// 解析：String('A') == 'A'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span><span class="params">(num)</span></span>&#123;</span><br><span class="line">　　<span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">1</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span><span class="params">(num)</span></span>&#123;</span><br><span class="line">　　<span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSane</span><span class="params">(num)</span></span>&#123;</span><br><span class="line">　　<span class="keyword">return</span> isEven(num)||isOdd(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">7</span>,<span class="number">4</span>,<span class="string">'13'</span>,-<span class="number">9</span>,<span class="literal">Infinity</span>];</span><br><span class="line">values.map(isSane);</span><br><span class="line"><span class="comment">// 结果：[true, true, true, false, false]</span></span><br><span class="line"><span class="comment">// 解析：'13' % 2 == 1; -9 % 2 == -1; Infinity % 2 = NaN</span></span><br><span class="line"></span><br><span class="line">[<span class="built_in">parseInt</span>(<span class="number">3</span>,<span class="number">8</span>),<span class="built_in">parseInt</span>(<span class="number">3</span>,<span class="number">2</span>),<span class="built_in">parseInt</span>(<span class="number">3</span>,<span class="number">0</span>)]</span><br><span class="line"><span class="comment">// 结果：[3, NaN, 3]</span></span><br><span class="line"><span class="comment">// 解析：3不是二进制范围，比如11011才是二进制, parseInt(3, 0) == 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.isArray(<span class="built_in">Array</span>.prototype)</span><br><span class="line"><span class="comment">// 结果：true</span></span><br><span class="line"><span class="comment">// 解析：Array.prototype == []</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</span><br><span class="line"><span class="keyword">if</span>([<span class="number">0</span>])&#123;</span><br><span class="line">　　<span class="built_in">console</span>.info(a == <span class="literal">true</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">　　<span class="built_in">console</span>.info(<span class="string">"else"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 结果：false</span></span><br><span class="line"><span class="comment">// 解析：![0] == false; !![0] == true</span></span><br><span class="line"></span><br><span class="line">[] == []</span><br><span class="line"><span class="comment">// 结果：false</span></span><br><span class="line"><span class="comment">// 解析：对象、数组、函数都是引用，也即不是常量，在内存中会存一块区域用变量去引用它</span></span><br><span class="line"><span class="comment">// 例如：(&#123;&#125;) == (&#123;&#125;) -&gt; false; (function() &#123;&#125;) == (function() &#123;&#125;) -&gt; false</span></span><br><span class="line"></span><br><span class="line">[(<span class="string">'5'</span>+<span class="number">3</span>),(<span class="string">'5'</span>-<span class="number">3</span>)]</span><br><span class="line"><span class="comment">// 结果：["53", 2]</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>+-+++-+<span class="number">1</span></span><br><span class="line"><span class="comment">// 结果：报错（Invalid left-hand side expression in prefix operation）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">2</span></span><br><span class="line">arr.map(<span class="function"><span class="keyword">function</span><span class="params">(elem)</span></span>&#123;<span class="keyword">return</span> <span class="string">'1'</span>;&#125;);</span><br><span class="line"><span class="comment">// 结果：["1", undefined × 2]</span></span><br><span class="line"><span class="comment">// 解析：第一个值返回了1，其他的都没有申请空间也即undefined</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span><span class="params">(arr)</span></span>&#123;		<span class="comment">// 1,1,10</span></span><br><span class="line">　　arr[<span class="number">0</span>] = arr[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">(a,b,c)</span></span>&#123;	<span class="comment">// 1,1,1</span></span><br><span class="line">　　c = <span class="number">10</span>;				<span class="comment">// 1,1,10</span></span><br><span class="line">　　sidEffecting(<span class="built_in">arguments</span>);	<span class="comment">// 1,1,10</span></span><br><span class="line">　　<span class="keyword">return</span> a+b+c;				<span class="comment">// 10,1,10</span></span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);						<span class="comment">// 21</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">111111111111111110000</span>;</span><br><span class="line">b = <span class="number">1111</span>;</span><br><span class="line"><span class="built_in">console</span>.info(a+b);</span><br><span class="line"><span class="comment">// 结果：111111111111111110000</span></span><br><span class="line"><span class="comment">// 解析：主要是检查js int的最大长度</span></span><br><span class="line"></span><br><span class="line">ar x = [].reverse;</span><br><span class="line">x();</span><br><span class="line"><span class="comment">// 结果：报错</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>.MIN_VALUE&gt;<span class="number">0</span></span><br><span class="line"><span class="comment">// 结果：true</span></span><br><span class="line"><span class="comment">// 解析：考验Number.MIN_VALUE = 5e-324 &gt; 0; Number.MAX_VALUE = 1.7976931348623157e+308</span></span><br><span class="line"><span class="comment">// 拓展：parseInt(Number.MIN_VALUE) == 5; parseInt(Number.MAX_VALUE) == 1; isFinite(Number.MAX_VALUE) == true; isFinite(Number.MIN_VALUE) == true</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>&lt;<span class="number">2</span>&lt;<span class="number">3</span>,<span class="number">3</span>&lt;<span class="number">2</span>&lt;<span class="number">1</span>]</span><br><span class="line"><span class="comment">// 结果：[true, true]</span></span><br><span class="line"><span class="comment">// 拓展：1&lt;3&lt;4&gt;-1 = true</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> == [[[<span class="number">2</span>]]]</span><br><span class="line"><span class="comment">// 结果：true</span></span><br><span class="line"><span class="comment">// 解析：表达式会尝试着使用valueOf()去转换值去匹配左边的2，看是否相等。</span></span><br><span class="line"><span class="comment">// 如果不相等再使用toString()看看是否相等，如果不相等就是false; </span></span><br><span class="line"><span class="comment">// 再就是'==' 双等于只是做值的判断，不会去做类型的判断，类型判断使用'==='</span></span><br><span class="line"><span class="comment">// 拓展: 2 == [2] -&gt; true; 2 == (function() &#123;return 2;&#125;()) -&gt; true; 2 == (function() &#123;return '2';&#125;()) -&gt; true</span></span><br><span class="line"></span><br><span class="line">[<span class="number">3.</span>toString(),<span class="number">3.</span>.toString(),<span class="number">3.</span>..toString()]</span><br><span class="line"><span class="comment">// 结果：报错</span></span><br><span class="line"><span class="comment">// 解析：3..toString() == '3'; 但是3...toString() 会报错多了一个'.'</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> x1 =y1 =<span class="number">1</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.info(y1);</span><br><span class="line"><span class="built_in">console</span>.info(x1);</span><br><span class="line"><span class="comment">// 结果：1、error</span></span><br><span class="line"><span class="comment">// 解析：y1使用了全局变量，而x1使用了局部变量</span></span><br><span class="line"></span><br><span class="line">列举IE和FF脚本兼容性的问题</span><br><span class="line">见cnblogs(http:<span class="comment">//www.cnblogs.com/fang-beny/archive/2011/11/28/2265841.html)</span></span><br></pre></td></tr></table></figure>
+<p>写一段代码，判断一个字符串中出现次数最多的字符，并统计出现的次数。</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 查找字符串出现最多和个数</span><br><span class="line"> *<span class="regexp">/</span><br><span class="line"></span><br><span class="line">/</span>*var str = <span class="string">'fwjlafjagagjwoiagjlwagjwlag'</span>;</span><br><span class="line"></span><br><span class="line">String.<span class="keyword">prototype</span>.findSame = function() &#123;</span><br><span class="line">    var me = this;</span><br><span class="line">    var arr = me.<span class="keyword">split</span>(<span class="string">''</span>);</span><br><span class="line">    var num = <span class="number">0</span>;</span><br><span class="line">    var value = <span class="string">''</span>;</span><br><span class="line">    var reg = <span class="regexp">/(\w)\1+/g</span>;</span><br><span class="line">    arr.<span class="keyword">sort</span>();</span><br><span class="line">    me = arr.<span class="keyword">join</span>(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">    me.replace(reg, function(<span class="variable">$0</span>, <span class="variable">$1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="variable">$0</span>.<span class="keyword">length</span>) &#123;</span><br><span class="line">            num = <span class="variable">$0</span>.<span class="keyword">length</span>;</span><br><span class="line">            value = <span class="variable">$1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> &#123;num: num, elem: value&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = str.findSame();</span><br><span class="line"></span><br><span class="line">console.<span class="keyword">log</span>(obj.elem + <span class="string">' : '</span> + obj.num);*<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
+<p>请问一下两段代码有什么不同？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;        </span><br><span class="line">　　<span class="comment">/*代码块*/</span>        </span><br><span class="line">　　setTimeout(<span class="built_in">arguments</span>.callee,<span class="number">10</span>);</span><br><span class="line">&#125;,<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">　　<span class="comment">/*代码块*/</span></span><br><span class="line">&#125;,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>更多的js代码片段，请转移到<a href="https://github.com/maomaoshu/jsBook" target="_blank" rel="external">jsBook</a><br>部分代码可以参考<a href="https://github.com/qqcome110/wlq/blob/master/self/myjs/test.js" target="_blank" rel="external">myjs-GITHUB</a></p>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/"> #js </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/26/js各种排序算法/">js各种排序算法</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/04/27/js测试题/"
+               data-title="js测试题" data-url="http://qqcome110.github.io/2015/04/27/js测试题/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="lenq" />
+          <p class="site-author-name">lenq</p>
+        </div>
+        <p class="site-description motion-element">web前端博客,web前端,前端,沙漠小店</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/qqcome110" target="_blank">Github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/qqcome110" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://douban.com/people/qqcome110" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/wang-lenq" target="_blank">ZhiHu</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#js测试题"><span class="nav-number">1.</span> <span class="nav-text">js测试题</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">lenq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"http://lenq.duoshuo.com/"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+</body>
+</html>
